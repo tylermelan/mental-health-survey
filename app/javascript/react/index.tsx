@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { Survey } from "./pages/Survey";
+import { Survey } from "./pages/Survey/Survey";
 
 function getRegisteredComponent(componentName: string) {
   const registeredComponents = new Map([[Survey.name, Survey]]);

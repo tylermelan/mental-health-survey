@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { QuestionWizard } from "./QuestionWizard/QuestionWizard";
-import { Confirmation } from "./Confirmation";
-import { TryAgain } from "./TryAgain";
+import { Confirmation } from "./Confirmation/Confirmation";
+import { TryAgain } from "./TryAgain/TryAgain";
 import styles from "./Survey.module.css";
 
 enum SurveyState {
