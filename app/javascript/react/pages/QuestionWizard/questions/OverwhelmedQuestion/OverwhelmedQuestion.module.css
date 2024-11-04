@@ -1,0 +1,24 @@
+.overwhelmed {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.overwhelmed label {
+  width: fit-content;
+  /* margin-bottom: 5px; */
+  /* border: 1px solid red; */
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-content: center;
+}
+
+.overwhelmed input {
+  accent-color: #553c97;
+  cursor: pointer;
+  width: 20px;
+  aspect-ratio: 1;
+  margin: 0;
+  margin-right: 10px;
+}

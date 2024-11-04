@@ -1,0 +1,18 @@
+.supported {
+  width: 100%;
+  accent-color: #553c97;
+  margin: 0;
+  cursor: pointer;
+}
+
+.supportedValues {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.supportedValues option {
+  padding: 0;
+  width: 16px;
+  text-align: center;
+}

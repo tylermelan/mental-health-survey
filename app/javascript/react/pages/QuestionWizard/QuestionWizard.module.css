@@ -1,0 +1,30 @@
+.wizard {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-width: 360px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: right;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.button {
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  width: 100px;
+  height: 40px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #553c97;
+  color: #ffffff;
+}
