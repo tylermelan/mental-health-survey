@@ -6,6 +6,20 @@ import {
 } from "./questions";
 import styles from "./QuestionWizard.module.css";
 
+const postSurvey = (fromData: FormData) => {
+  const csrfToken = document.querySelector<HTMLMetaElement>(
+    "meta[name='csrf-token']"
+  )?.content;
+
+  if (!csrfToken) return;
+
+  return fetch("/", {
+    method: "POST",
+    headers: { "X-CSRF-Token": csrfToken },
+    body: fromData,
+  });
+};
+
 interface QuestionWizardProps {
   onSuccess: () => void;
   onError: () => void;
@@ -24,39 +38,31 @@ export const QuestionWizard = ({ onSuccess, onError }: QuestionWizardProps) => {
   const isLastQuestion = step == questions.length - 1;
 
   const goBack = () => setStep(step - 1);
-  const nextStep = async () => {
+
+  const submit = async () => {
+    const fromData = new FormData(formRef.current ?? undefined);
+    const response = await postSurvey(fromData);
+
+    if (response?.ok) {
+      onSuccess();
+    } else {
+      onError();
+    }
+  };
+
+  const nextStep = () => {
     const valid = formRef.current?.reportValidity();
     if (!valid) return;
 
     if (!isLastQuestion) {
       setStep(step + 1);
     } else {
-      const fromData = new FormData(formRef.current!);
-
-      const param = document.querySelector<HTMLMetaElement>(
-        "meta[name='csrf-param']"
-      )?.content;
-      const value = document.querySelector<HTMLMetaElement>(
-        "meta[name='csrf-token']"
-      )?.content;
-
-      fromData.append(param!, value!);
-
-      const response = await fetch("/", {
-        method: "POST",
-        body: fromData,
-      });
-
-      if (response.ok) {
-        onSuccess();
-      } else {
-        onError();
-      }
+      submit();
     }
   };
 
   return (
-    <form className={styles.wizard} ref={formRef} data-turbo="false">
+    <form className={styles.wizard} ref={formRef}>
       {questions.map((Question, index) => (
         <div hidden={step !== index} key={index}>
           <Question disabled={step < index} />
@@ -69,7 +75,7 @@ export const QuestionWizard = ({ onSuccess, onError }: QuestionWizardProps) => {
           </button>
         )}
         <button
-          className={`${styles.button} ${styles.primary}`}
+          className={`${styles.button} ${styles.buttonPrimary}`}
           type="button"
           onClick={nextStep}
         >

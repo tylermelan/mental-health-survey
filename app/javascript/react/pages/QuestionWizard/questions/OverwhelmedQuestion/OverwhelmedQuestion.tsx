@@ -3,55 +3,23 @@ import { Question, ConcreteQuestionProps } from "../Question/Question";
 import styles from "./OverwhelmedQuestion.module.css";
 
 export const OverwhelmedQuestion = ({ disabled }: ConcreteQuestionProps) => {
+  const answers = ["never", "rarely", "sometimes", "often", "always"];
+
   return (
     <Question question="How often have you felt overwhelmed in the past month?">
       <div className={styles.overwhelmed}>
-        <label>
-          <input
-            required
-            type="radio"
-            name="survey[overwhelmed]"
-            value="never"
-            disabled={disabled}
-          />
-          Never
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="survey[overwhelmed]"
-            value="rarely"
-            disabled={disabled}
-          />
-          Rarely
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="survey[overwhelmed]"
-            value="sometimes"
-            disabled={disabled}
-          />
-          Sometimes
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="survey[overwhelmed]"
-            value="often"
-            disabled={disabled}
-          />
-          Often
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="survey[overwhelmed]"
-            value="always"
-            disabled={disabled}
-          />
-          Always
-        </label>
+        {answers.map((answer, index) => (
+          <label key={index}>
+            <input
+              required
+              type="radio"
+              name="survey[overwhelmed]"
+              value={answer}
+              disabled={disabled}
+            />
+            {answer}
+          </label>
+        ))}
       </div>
     </Question>
   );

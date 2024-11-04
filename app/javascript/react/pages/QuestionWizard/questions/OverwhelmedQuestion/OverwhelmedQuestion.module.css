@@ -6,12 +6,11 @@
 
 .overwhelmed label {
   width: fit-content;
-  /* margin-bottom: 5px; */
-  /* border: 1px solid red; */
   font-size: 20px;
   cursor: pointer;
   display: flex;
   align-content: center;
+  text-transform: capitalize;
 }
 
 .overwhelmed input {

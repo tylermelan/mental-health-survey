@@ -5,13 +5,13 @@
   cursor: pointer;
 }
 
-.supportedValues {
+.scaleMarkers {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.supportedValues option {
+.scaleMarkers option {
   padding: 0;
   width: 16px;
   text-align: center;
