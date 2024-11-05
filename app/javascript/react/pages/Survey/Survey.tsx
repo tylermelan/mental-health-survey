@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { QuestionWizard } from "./QuestionWizard/QuestionWizard";
 import { Confirmation } from "./Confirmation/Confirmation";
 import { TryAgain } from "./TryAgain/TryAgain";

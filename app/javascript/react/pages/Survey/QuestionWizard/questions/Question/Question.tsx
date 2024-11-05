@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import styles from "./Question.module.css";
 
 export interface ConcreteQuestionProps {

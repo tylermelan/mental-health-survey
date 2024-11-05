@@ -1,5 +1,3 @@
-import React from "react";
-
 export const TryAgain = () => (
   <>
     <h1>Something went wrong on our end.</h1>

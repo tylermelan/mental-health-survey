@@ -1,4 +1,3 @@
-import React from "react";
 import { Question, ConcreteQuestionProps } from "../Question/Question";
 import styles from "./SupportedQuestion.module.css";
 
