@@ -1,12 +1,12 @@
-class SurveyController < ApplicationController
-  def index
+class SurveysController < ApplicationController
+  def new
   end
 
   def create
-    @survey = Survey.new(survey_params)
+    survey = Survey.new(survey_params)
 
-    if @survey.save
-      head :ok
+    if survey.save
+      head :created
     else
       head :unprocessable_entity
     end
