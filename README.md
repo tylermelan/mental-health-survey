@@ -1,24 +1,38 @@
-# README
+# Mental Health Survey Submission App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img width="434" alt="question" src="https://github.com/user-attachments/assets/a28446a8-84d4-433d-b615-f60a1b309275">
 
-Things you may want to cover:
+## Install the app
+A few dependencies are needed before installing the app:
+- rails
+- node
+- yarn
+- postgresql
 
-* Ruby version
+After installing the dependencies, run `bin/setup` to install the gems and node modules. It will also prepare the database.
 
-* System dependencies
+The `Survey` attributes are encrypted so the encryption keys need to be generated.
 
-* Configuration
+Run `bin/rails db:encryption:init` to generate a random key set. This will give an output similar to:
+```
+$ bin/rails db:encryption:init
+Add this entry to the credentials of the target environment:
 
-* Database creation
+active_record_encryption:
+  primary_key: EGY8WhulUOXixybod7ZWwMIL68R9o5kC
+  deterministic_key: aPA5XyALhf75NNnMzaspW7akTfZp0lPY
+  key_derivation_salt: xEY0dt6TZcAMg52K7O84wYzkjvbA62Hz
+```
 
-* Database initialization
+These values can be stored by copying and pasting them into Rails credentials.
 
-* How to run the test suite
+To create or edit your rails credentials run `EDITOR=vim bin/rails credentials:edit` and then add the values generated in the previous step to the credentials file. You can change `vim` to the editor of your choice.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Run the app
 
-* Deployment instructions
+Run `bin/dev` to start your development server and esbuild. Then navigate to [http://localhost:3000/](http://localhost:3000/) in your browser to use the app.
 
-* ...
+## Running tests
+RSpec: `bin/bundle exec rspec`
+
+Jest: `yarn test`
