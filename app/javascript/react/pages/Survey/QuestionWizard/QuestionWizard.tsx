@@ -30,7 +30,7 @@ export const QuestionWizard = ({ onSuccess, onError }: QuestionWizardProps) => {
     const fromData = new FormData(formRef.current ?? undefined);
     const response = await postSurvey(fromData);
 
-    if (response?.ok) {
+    if (response.ok) {
       onSuccess();
     } else {
       onError();

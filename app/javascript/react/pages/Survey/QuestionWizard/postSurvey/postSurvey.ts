@@ -1,9 +1,7 @@
 export const postSurvey = (fromData: FormData) => {
-  const csrfToken = document.querySelector<HTMLMetaElement>(
-    "meta[name='csrf-token']"
-  )?.content;
-
-  if (!csrfToken) return;
+  const csrfToken =
+    document.querySelector<HTMLMetaElement>("meta[name='csrf-token']")
+      ?.content ?? "";
 
   return fetch("/", {
     method: "POST",
