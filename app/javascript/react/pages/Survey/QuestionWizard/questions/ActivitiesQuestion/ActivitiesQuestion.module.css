@@ -1,6 +1,6 @@
 .activities {
-  width: 100%;
+  width: calc(100% - 4px);
   height: 200px;
   font-size: 16px;
-  padding: 0;
+  padding: 2px;
 }
