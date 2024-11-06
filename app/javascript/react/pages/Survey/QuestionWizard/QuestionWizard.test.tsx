@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { QuestionWizard } from "./QuestionWizard";
 
-const getOverwhelmedQuestionRadio = () => screen.getByText("never");
+const getOverwhelmedQuestionRadio = () => screen.getByDisplayValue("never");
 
 const getSupportedQuestionRange = () =>
   screen.getByTestId("supported-question-range");
