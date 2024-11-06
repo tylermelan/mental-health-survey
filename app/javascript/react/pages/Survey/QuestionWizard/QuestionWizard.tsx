@@ -4,21 +4,8 @@ import {
   SupportedQuestion,
   ActivitiesQuestion,
 } from "./questions";
+import { postSurvey } from "./postSurvey/postSurvey";
 import styles from "./QuestionWizard.module.css";
-
-const postSurvey = (fromData: FormData) => {
-  const csrfToken = document.querySelector<HTMLMetaElement>(
-    "meta[name='csrf-token']"
-  )?.content;
-
-  if (!csrfToken) return;
-
-  return fetch("/", {
-    method: "POST",
-    headers: { "X-CSRF-Token": csrfToken },
-    body: fromData,
-  });
-};
 
 interface QuestionWizardProps {
   onSuccess: () => void;

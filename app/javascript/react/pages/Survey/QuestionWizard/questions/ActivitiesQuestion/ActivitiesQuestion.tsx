@@ -9,6 +9,7 @@ export const ActivitiesQuestion = ({ disabled }: ConcreteQuestionProps) => {
         required
         name="survey[activities]"
         disabled={disabled}
+        data-testid="activities-question-textarea"
       />
     </Question>
   );

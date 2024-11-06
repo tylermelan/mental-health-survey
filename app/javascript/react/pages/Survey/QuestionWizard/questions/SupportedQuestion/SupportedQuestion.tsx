@@ -14,6 +14,7 @@ export const SupportedQuestion = ({ disabled }: ConcreteQuestionProps) => {
         defaultValue="5"
         list="scaleMarkers"
         disabled={disabled}
+        data-testid="supported-question-range"
       />
 
       <datalist className={styles.scaleMarkers} id="scaleMarkers">
